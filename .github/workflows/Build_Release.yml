@@ -16,10 +16,10 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
-        go-version: 1.17
+        go-version: 1.19
         cache: true
     - name: Build
-      run: go get -v github.com/sheeye/httpdns
+      run: go install github.com/sheeye/httpdns
       # 使用 goreleaser 进行生成多平台代码并且上传到github release进行发布
     - name: Create release on GitHub
       uses: docker://goreleaser/goreleaser:latest
